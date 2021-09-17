@@ -131,17 +131,17 @@ $(function(){
 function foodVote(bno, code){
 	if(code == 'blike'){
 		if(confirm("해당 글을 추천하시겠습니까?")){
-			location.href="./noticeViewVote?vote=" + code + "&bno=" + bno;
+			location.href="./foodViewVote?vote=" + code + "&bno=" + bno;
 		}
 	}else if(code == 'bdislike'){
 		if(confirm("해당 글을 싫어하시겠습니까?")){
-			location.href="./noticeViewVote?vote=" + code + "&bno=" + bno;
+			location.href="./foodViewVote?vote=" + code + "&bno=" + bno;
 		}			
 	}
 }
 function foodcVote(cno, bno){
 	if(confirm("해당 댓글을 추천하시겠습니까?")){
-			location.href="./noticeViewVote?bno=" + bno + "&cno=" + cno;	
+			location.href="./foodViewVote?bno=" + bno + "&cno=" + cno;	
 	}
 }
 </script>
@@ -179,8 +179,8 @@ function foodcVote(cno, bno){
 					<br>
 				</div>
 				<div id="likeDislike">
-					<button id="likeBtn"><img src="./img/like2.png" alt="좋아요">좋아요</button>
-					<button id="disLikeBtn"><img src="./img/dislike.png" alt="싫어요">싫어요</button>
+					<button onclick="foodVote(${dto.bno}, 'blike');" id="likeBtn"><img src="./img/like2.png" alt="좋아요">좋아요</button>
+					<button onclick="foodVote(${dto.bno}, 'bdislike');" id="disLikeBtn"><img src="./img/dislike.png" alt="싫어요">싫어요</button>
 				</div>
 			</div>
 				<div id="comment">
